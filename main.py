@@ -3,23 +3,7 @@ import time
 import os
 import sys
 
-pygame.init()
-
-bgMusicFile = "cavern.mid"
-dialogFile = "dialog.mp3"
-
-pygame.mixer.init()
-pygame.mixer.music.load(bgMusicFile)
-pygame.mixer.music.play(-1)
-
-dialogSound = pygame.mixer.Sound(dialogFile)
-
-os.system("clear")
-
-text1 = "Once up on a time, in the wooden land."
-text2 = "There is a man who urges to rules the world..."
-text3 = "for his family's sake..."
-text4 = "...for good."
+os.system('cls' if os.name == 'nt' else 'clear')
 
 def printDialogs(texts, wait=True):
     def printDialog(str):
@@ -43,6 +27,22 @@ def printDialogs(texts, wait=True):
             printDialog(str=text)
     else:
         printDialog(texts)
+
+pygame.init()
+
+bgMusicFile = "cavern.mid"
+dialogFile = "dialog.mp3"
+
+pygame.mixer.init()
+pygame.mixer.music.load(bgMusicFile)
+pygame.mixer.music.play(-1)
+
+dialogSound = pygame.mixer.Sound(dialogFile)
+
+text1 = "Once up on a time, in the wooden land."
+text2 = "There is a man who urges to rules the world..."
+text3 = "for his family's sake..."
+text4 = "...for good."
 
 time.sleep(1)
 printDialogs("We are here.")
